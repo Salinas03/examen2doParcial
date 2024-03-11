@@ -1,0 +1,42 @@
+<div class="container">
+    <br/><br/>
+    <h3>Listado de clientes</h3>
+
+    <div *ngIf="!clientes.length">No hay clientes Registrados</div>
+
+    <table *ngIf="clientes.length" class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>RFC</th>
+                <th>Domicilio</th>
+                <th>Tipo de cliente</th>
+                <th>Sleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.rfc}}</td>
+                <td>{{cliente.domicilio}}</td>
+                <td>{{cliente.tipoCliente}}</td>
+                <td>
+                    <button type="button" class="btn btn-secondary" (click)="selectCliente(cliente)">Seleccionar</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <br/><br/>
+    <div *ngIf="clientes.length">
+        <strong>Tipos de clientes</strong>
+        <br/><br/>
+        1: Clientes activos
+        <br/><br/>
+        2: Clientes inactivos
+        <br/><br/>
+        3: Clientes deudores 
+        <br/>
+        <br/>
+    </div>
+</div>

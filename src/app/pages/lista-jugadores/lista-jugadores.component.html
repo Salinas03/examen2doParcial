@@ -1,0 +1,42 @@
+<h3>Listado de los jugadores</h3>
+
+<div *ngIf="!jugadores.length">No hay jugadores registrados</div>
+
+<table *ngIf="jugadores.length" class="table">
+
+    <thead>
+        <tr>
+            <th>ID Jugador</th>
+            <th>Nombre</th>
+            <th>Equipo</th>
+            <th>Posision</th>
+            <th>Numero de playera</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let jugador of jugadores">
+            <td>{{jugador.nombre}}</td>
+            <td>{{jugador.equipo}}</td>
+            <td>{{jugador.posision}}</td>
+            <td>{{jugador.numeroPlayera}}</td>
+            <td>
+                <button type="button" class="btn btn-secondary" (click)="selectJugador(jugador)" routerLink="/altaJugador">Seleccionar</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<br><br>
+
+<div *ngIf="jugadores.length">
+    <strong>Numero del jugador :</strong><br>
+    Número de playera: 0 <br>
+    Número de playera: 1 <br>
+    Número de playera: 2 <br>
+    Número de playera: 7 <br>
+    Número de playera: 10 <br>
+    Número de playera: 14 <br>
+    Número de playera: 20 
+
+</div>

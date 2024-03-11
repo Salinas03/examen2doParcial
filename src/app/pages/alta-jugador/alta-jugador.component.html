@@ -1,0 +1,33 @@
+<h3>Alta Jugador</h3>
+
+<div class="col-sm-4">
+    <p>
+        <label for="">Nombre del Jugador:</label>
+        <input type="text" class="form-control" [(ngModel)]="jugador.nombre"/>
+    </p>
+    <p>
+        <label for="">Equipo:</label>
+        <input type="text" class="form-control" [(ngModel)]="jugador.equipo"/>
+    </p>
+    <p>
+        <label for="">Posisión:</label>
+        <input type="text" class="form-control" [(ngModel)]="jugador.posision">
+    </p>
+    <p>
+        <label>Selecciona el número de Jugador:</label>
+        <select [(ngModel)]="jugador.numeroPlayera" class="form-control">
+            <option *ngFor="let tipo of tipos" value="{{tipo.id}}">
+                {{ tipo.descripcion }}
+            </option>
+        </select>
+    </p>
+    <p>
+        <button type="button" class="btn btn-primary" (click)="this.insertarJugador()" routerLink="/listaJugador">Registrar Jugador</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-warning" (click)="this.updateJugador()" routerLink="/listaJugador">Modificar</button>
+    </p>
+    <p>
+        <button type="button" class="btn btn-danger" (click)="this.deleteJugador()" routerLink="/listaJugador">Eliminar</button>
+    </p>
+</div>

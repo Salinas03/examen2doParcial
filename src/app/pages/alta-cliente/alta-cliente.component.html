@@ -1,0 +1,56 @@
+<div  >
+    <div class="col-md-4">
+        <h3>Alta Cliente</h3>
+    
+        <div class="col-sm-12">
+            <p>
+                <label>Nombre del cliente</label>
+                <br/>
+                <input type="text" class="form-control" [(ngModel)]="cliente.nombre"/>
+            </p>
+            <p>
+                <label>RFC</label>
+                <br/>
+                <input type="text" class="form-control" [(ngModel)]="cliente.rfc"/>
+            </p>
+            <p>
+                <label>Domicilio</label>
+                <br/>
+                <input type="text" class="form-control" [(ngModel)]="cliente.domicilio"/>
+            </p>
+            <p>
+                <label>Selecciona el tipo el tipo de cliente</label>
+                <br/>
+                <select [(ngModel)]="cliente.tipoCliente" class="form-control">
+                    <option *ngFor="let tipo of tipos" value="{{tipo.id}}">
+                        {{tipo.descripcion}}
+                    </option>
+            </select>
+            </p>
+        </div>
+        <div class="container d-flex justify-content-center align-items-center text-center">
+
+            <table>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="this.insertarCliente()">Insertar</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-warning" (click)="this.updateCliente()">Modificar</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="this.deleteCliente()">Eliminar</button>
+                    </td>
+                    <br/><br/>
+                </tr>
+            </table>
+        </div>
+        
+    
+    </div>
+    
+  </div>
+
+  <div>
+    <app-lista-cliente></app-lista-cliente>
+  </div>
